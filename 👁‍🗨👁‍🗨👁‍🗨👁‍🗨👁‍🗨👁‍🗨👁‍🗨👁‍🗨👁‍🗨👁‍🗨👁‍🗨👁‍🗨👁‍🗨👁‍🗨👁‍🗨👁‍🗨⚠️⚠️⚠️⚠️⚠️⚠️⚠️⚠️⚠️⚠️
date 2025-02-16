@@ -1,0 +1,165 @@
+local gui = Instance.new("ScreenGui")
+gui.Name = "patrickGui"
+gui.Parent = game.CoreGui
+
+--///patrick gui maker///--
+
+
+-- put your mainframe into the screengui that I have made (frame.Parent = gui) 
+
+local fr = Instance.new("Frame")
+fr.Size = UDim2.new(0.3, 0, 0.7, 0)
+fr.Position = UDim2.new(0.4, 0, 0.0, 0)
+fr.BackgroundColor3 = Color3.new(0, 100, 0)
+fr.BorderColor3 = Color3.new(0,0, 0)
+fr.BorderSizePixel = 1
+fr.Active = true
+fr.BackgroundTransparency = 0 
+fr.Draggable = true
+fr.Parent = gui
+
+
+local Label = Instance.new("TextLabel")
+Label.Size = UDim2.new(0.4, 0, 0.2, 0)
+Label.Position = UDim2.new(0.3, 0, 0.0, 0)
+Label.BackgroundColor3 = Color3.new(0, 0, 0)
+Label.BorderColor3 = Color3.new(0, 0, 0)
+Label.BorderSizePixel = 1
+Label.Text = "Xymatekidd Gui Version k00pkidd"
+Label.BackgroundTransparency = 5 
+Label.TextColor3 = Color3.new(0,0,0)
+Label.Font = Enum.Font.Code
+Label.Parent = fr
+Label.TextSize = 15
+
+local gui = Instance.new("ScreenGui",game.CoreGui)
+local im = Instance.new("ImageLabel")
+im.Size = UDim2.new(0.999, 0, 0.9, 0)
+im.Position = UDim2.new(0.0, 0, 0.5, 0)
+im.BackgroundColor3 = Color3.new(0, 0, 0)
+im.ImageColor3 = Color3.new(255,255,255)
+im.Image = "rbxassetid://135422259673162"
+im.ImageTransparency = 0
+im.Parent = fr
+local UI = Instance.new("TextButton")
+UI.Size = UDim2.new(0.6, 0, 0.2, 0)
+UI.Position = UDim2.new(0.3, 0, 0.9999, 0)
+UI.BackgroundColor3 = Color3.new(0, 0, 0)
+UI.BorderColor3 = Color3.new(0, 100, 0)
+UI.BorderSizePixel = 1
+UI.Text = "Black All(Client) "
+UI.BackgroundTransparency = 0 
+UI.TextColor3 = Color3.new(0, 100, 0)
+UI.Font = Enum.Font.Code
+UI.Parent = fr
+UI.TextSize = 13
+UI.MouseButton1Down:Connect(function()
+local function makePlayersBlack()
+    for _, player in pairs(game.Players:GetPlayers()) do
+        if player.Character then
+            for _, part in pairs(player.Character:GetChildren()) do
+                if part:IsA("BasePart") and part.Name ~= "HumanoidRootPart" then
+                    part.Color = Color3.fromRGB(0, 0, 0) -- Black color
+                end
+            end
+        end
+    end
+end
+
+-- Call the function when the game starts
+makePlayersBlack()
+end)
+local Text = Instance.new("TextLabel")
+Text.Size = UDim2.new(0.9999,99, 0.2, 0)
+Text.Position = UDim2.new(0.0, 0, 0.2, 0)
+Text.BackgroundColor3 = Color3.new(0, 100, 0)
+Text.BorderColor3 = Color3.new(0, 0, 0)
+Text.BorderSizePixel = 1
+Text.Text = "If you want to drag the gui just drag the green colour"
+Text.BackgroundTransparency = 0 
+Text.TextColor3 = Color3.new(0,0,0)
+Text.Font = Enum.Font.Code
+Text.Parent = fr
+Text.TextSize = 13
+
+local Scroll = Instance.new("ScrollingFrame")
+Scroll.Size = UDim2.new(0.5, 0, 0.4, 0)
+Scroll.Position = UDim2.new(0.5, 0, 0.5, 0)
+Scroll.BackgroundColor3 = Color3.new(0, 100, 0)
+Scroll.BorderColor3 = Color3.new(0, 0, 0)
+Scroll.BorderSizePixel = 1
+Scroll.Parent = fr
+
+
+Scroll.BackgroundTransparency = 0 
+local Kol = Instance.new("TextButton")
+Kol.Size = UDim2.new(0.4, 0, 0.1, 0)
+Kol.Position = UDim2.new(0.0, 0, 0.2, 0)
+Kol.BackgroundColor3 = Color3.new(0, 100, 0)
+Kol.BorderColor3 = Color3.new(0, 0, 0)
+Kol.BorderSizePixel = 1
+Kol.Text = "Bang All"
+Kol.BackgroundTransparency = 0 
+Kol.TextColor3 = Color3.new(0,0,0)
+Kol.Font = Enum.Font.Code
+Kol.Parent = Scroll
+
+Kol.MouseButton1Down:Connect(function()
+local function bangAllPlayers()
+    for _, player in pairs(game.Players:GetPlayers()) do
+        if player.Character and player.Character:FindFirstChild("Humanoid") then
+            -- Load Animation
+            local humanoid = player.Character:FindFirstChild("Humanoid")
+            local animator = humanoid:FindFirstChildOfClass("Animator")
+
+            if animator then
+                local animation = Instance.new("Animation")
+                animation.AnimationId = "rbxassetid://148840371" -- Replace with the correct animation ID
+                local animTrack = animator:LoadAnimation(animation)
+                animTrack:Play()
+            end
+        end
+    end
+end
+
+-- Call the function
+bangAllPlayers()
+end)
+local client = Instance.new("TextLabel")
+client.Size = UDim2.new(0.5, 0, 0.1, 0)
+client.Position = UDim2.new(0.3, 0, 0.0, 0)
+client.BackgroundColor3 = Color3.new(0, 100, 0)
+client.BorderColor3 = Color3.new(0,0,0)
+client.BorderSizePixel = 1
+client.Text = "( Client)"
+client.BackgroundTransparency = 0 
+client.TextColor3 = Color3.new(0,0,0)
+client.Font = Enum.Font.Code
+client.Parent = Scroll
+
+
+local Lol = Instance.new("Frame")
+Lol.Size = UDim2.new(0.9, 0, 0.5, 0)
+Lol.Position = UDim2.new(0.9999, 0, 0.5, 0)
+Lol.BackgroundColor3 = Color3.new(0, 100, 0)
+Lol.BorderColor3 = Color3.new(0, 0,0)
+Lol.BorderSizePixel = 1
+Lol.Active = true
+Lol.BackgroundTransparency = 0 
+Lol.Draggable = false
+Lol.Parent = fr
+
+
+local xd = Instance.new("TextLabel")
+xd.Size = UDim2.new(0.3, 0, 0.2, 0)
+xd.Position = UDim2.new(0.3, 0, 0.5, 0)
+xd.BackgroundColor3 = Color3.new(0, 0, 0)
+xd.BorderColor3 = Color3.new(0, 0, 0)
+xd.BorderSizePixel = 1
+xd.Text = "More Script Coming soon"
+xd.BackgroundTransparency = 5 
+xd.TextColor3 = Color3.new(0,0,0)
+xd.Font = Enum.Font.Code
+xd.Parent = Lol
+xd.TextSize = 13
+
